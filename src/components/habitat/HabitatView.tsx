@@ -120,7 +120,7 @@ export function HabitatView({ flex, bassTests, bassO2: [bassLo, bassHi] }: { fle
           </Card>
         </div>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-ink-300">
-          Observation: none of the FLEX tests nearest to habitat air ended with the flame going out; each ended with the droplet disrupting or burning away. At the same pressure with less oxygen, most flames went out. These are counts from NASA&apos;s table, not a prediction for a habitat. <Link href="/model" className="text-accent hover:underline">Explore these conditions in the flame-out model</Link>.
+          Observation: none of the FLEX tests nearest to habitat air ended with the flame going out; each ended with the droplet disrupting or burning away. At the same pressure with less oxygen, most flames went out. These are counts from NASA&apos;s table, not a prediction for a habitat. <Link href="/model" className="text-accent hover:underline">Explore these conditions in the flame-out model</Link>. <Link href="/gaps" className="text-accent hover:underline">See what hasn&apos;t been tested yet</Link>.
         </p>
       </section>
 

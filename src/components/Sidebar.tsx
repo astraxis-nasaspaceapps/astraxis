@@ -15,6 +15,7 @@ const NAV = [
   { href: "/materials", label: "Spacecraft materials" },
   { href: "/investigations", label: "Investigations ranked" },
   { href: "/model", label: "Flame-out model" },
+  { href: "/gaps", label: "Evidence gaps" },
   { href: "/assistant", label: "Research Assistant" },
   { href: "/sources", label: "Sources and data notes" },
 ];

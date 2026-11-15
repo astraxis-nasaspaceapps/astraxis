@@ -16,6 +16,7 @@ const PAGES: Item[] = [
   { key: "p-materials", group: "Go to", title: "Spacecraft materials (SAFFIRE)", hint: "Silicone, PMMA and fabric burned in orbit vs normal gravity", href: "/materials" },
   { key: "p-investigations", group: "Go to", title: "Investigations ranked", hint: "All 24 PSI combustion investigations ranked for habitat fire safety", href: "/investigations" },
   { key: "p-model", group: "Go to", title: "Flame-out model", hint: "Predict flame-out from oxygen, pressure, gas, fuel and droplet size", href: "/model" },
+  { key: "p-gaps", group: "Go to", title: "Evidence gaps", hint: "What NASA hasn’t tested yet for habitat fire safety, and what to test next", href: "/gaps" },
   { key: "p-assistant", group: "Go to", title: "Research Assistant", hint: "Ask a question, get cited NASA evidence", href: "/assistant" },
   { key: "p-sources", group: "Go to", title: "Sources and data notes", hint: "DOIs, files, units, cleaning decisions", href: "/sources" },
 ];

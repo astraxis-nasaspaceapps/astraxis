@@ -1,6 +1,7 @@
 import { activeProvider, complete } from "@/lib/llm";
 import { catalogEvidence, catalog, rankedInvestigations, CRITERIA } from "@/lib/catalog";
 import saffireJson from "@/data/saffire.json";
+import { gapsEvidence } from "@/lib/gaps";
 import { evidenceStats, investigationContext, parseQuestion, search, stratify } from "@/lib/retrieval";
 
 const SYSTEM = `You are the Astraxis research assistant. You explain NASA microgravity combustion evidence to researchers and engineers.
@@ -19,7 +20,8 @@ Rules, all mandatory:
 7. BASS-II records contain test conditions only, not outcomes or flame spread rates: never claim BASS-II outcomes.
 8. If a PSI CATALOG RANKING is in the evidence, never state any rank, score or ordering yourself: when the question asks which investigations matter most, the server inserts the exact ranked list at the top of your answer. You may discuss the investigations named in that ranking, citing them as [PSI-20]. Make clear that catalog-only investigations are judged from NASA's catalog descriptions, not their test data, and that PSI-69 and PSI-25 have full test data in Astraxis and SAFFIRE I–III (PSI-98, PSI-99, PSI-100) have small test tables. Only ever cite IDs of the form PSI-<number> or PSI-<number>:<record>; never cite section names.
 9. If SAFFIRE SAMPLES are in the evidence, quote burn lengths exactly as NASA wrote them (e.g. "~ 0", "Complete"); never turn words into numbers. Say they ran in ordinary cabin air (about 21.5–22% O2), not habitat oxygen. Cite samples as [PSI-99:2-1].
-10. Plain text only. You may use "- " bullets and **bold**. Under 260 words.`;
+10. If EVIDENCE GAPS are in the evidence, report each gap with its counts exactly as given and present suggested tests as Astraxis proposals, not NASA plans.
+11. Plain text only. You may use "- " bullets and **bold**. Under 260 words.`;
 
 export async function POST(req: Request) {
   const { question } = (await req.json().catch(() => ({}))) as { question?: string };
@@ -51,6 +53,7 @@ export async function POST(req: Request) {
     ? `SAFFIRE SAMPLES (NASA PSI-98/99/100 experimental tables; spacecraft materials burned in an uncrewed Cygnus vehicle after it left the ISS; values exactly as NASA wrote them; summary of the 9 SAFFIRE-II samples: ${JSON.stringify(saffire.summary)}):\n` +
       saffire.samples.map((x) => `${x.record_id} (${x.acronym}): ${x.material ?? "material blank in NASA's table"}, thickness ${x.thickness}, O2 ${x.o2 ?? "not in table"}, flow ${x.direction}, burn time ${x.burn_time ?? "not in table"}${x.ug_burn_length !== null ? `, microgravity burn length ${x.ug_burn_length}, microgravity spread ${x.ug_spread}, 1-g burn length ${x.g1_burn_length}, 1-g spread ${x.g1_spread}, result ${x.comparison}` : ""}`).join("\n")
     : "";
+  const askAboutGaps = /gap|missing|untested|not (been )?tested|test next|next experiment|should (nasa )?test|future (test|experiment)|unknown|what.*(lack|need)/i.test(q);
   if (provider && ranked.length) {
     const evidence = [
       `QUESTION: ${q}`,
@@ -61,6 +64,7 @@ export async function POST(req: Request) {
       `TOP ${top.length} MATCHING TEST RECORDS (record ID: summary):`,
       ...top.map((r) => `${r.id}: ${r.summary}${r.flags ? ` [has ${r.flags} data note(s)]` : ""}`),
       saffireEvidence,
+      askAboutGaps ? `EVIDENCE GAPS (computed by Astraxis from the FLEX, BASS-II and SAFFIRE tables; suggested tests are Astraxis proposals, not NASA plans):\n${gapsEvidence()}` : "",
       askAboutInvestigations ? `PSI CATALOG RANKING (all ${catalog.investigations.length} PSI combustion investigations, ranked by 5 habitat fire-safety criteria: 30%+ O2, low pressure, spacecraft materials, fire-safety use, flight data; evidence quoted from NASA's catalog):\n${catalogEvidence()}` : "",
     ].filter(Boolean).join("\n");
     try {

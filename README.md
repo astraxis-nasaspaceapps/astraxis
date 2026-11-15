@@ -25,6 +25,10 @@ Safety Insights from Microgravity Combustion Data*.
 - **Flame-out model**: a logistic model of FLEX flame-out (oxygen, pressure, added gas, fuel, droplet size).
   Cross-validated accuracy 83% vs 69% for always guessing; predicted probabilities match observed rates by oxygen
   band. It predicts only inside NASA's tested ranges and shows how many real tests back each prediction.
+- **Evidence gaps**: what NASA's data doesn't cover yet for habitat fire safety, computed from the tables: no test
+  inside the habitat target (30%+ O₂ at ≤10.2 psi), no CO₂ or helium suppressant tests above 25% O₂, no spacecraft
+  materials burned above 22.2% O₂, no small droplets near habitat air. Each comes with the closest evidence and a
+  suggested next experiment (our proposal, not NASA's plan).
 - **Ctrl+K search**: jump to any test ID or page, or send a question to the assistant.
 
 ## NASA data
