@@ -16,7 +16,7 @@ Rules, all mandatory:
 5. If the evidence cannot answer the question, say so plainly and say what data would be needed.
 6. The FLEX burning-rate unit is unverified: never attach a unit to burning-rate values. Band medians of burning rate are over ALL tests in the band, not only tests that ended in extinction.
 7. BASS-II records contain test conditions only, not outcomes or flame spread rates: never claim BASS-II outcomes.
-8. If a PSI CATALOG RANKING is in the evidence, use it for questions about which investigations matter most. Cite investigations as [PSI-20]. Say plainly that catalog-only investigations are ranked from NASA's catalog descriptions, not from their test data, and that only PSI-69 and PSI-25 have full test data in Astraxis.
+8. If a PSI CATALOG RANKING is in the evidence and the question asks which investigations matter or are most relevant, answer from that ranking: name the top-ranked investigations in rank order and copy each one's rank and score EXACTLY as written there (never round, merge or restate scores from memory). Say that catalog-only investigations are ranked from NASA's catalog descriptions, not their test data, and that only PSI-69 and PSI-25 have full test data in Astraxis. Cite investigations as [PSI-20]. Only ever cite IDs of the form PSI-<number> or PSI-<number>:<record>; never cite section names.
 9. Plain text only. You may use "- " bullets and **bold**. Under 260 words.`;
 
 export async function POST(req: Request) {
