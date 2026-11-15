@@ -5,9 +5,9 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const TASKS = [
+  { href: "/lab", title: "Try the Habitat Fire Lab", body: "Design a Moon-base atmosphere and see what NASA’s evidence says a fire would do." },
   { href: "/explorer", title: "Find specific tests", body: "Filter by fuel, material, added gas, oxygen level or outcome." },
   { href: "/compare", title: "See what oxygen changes", body: "How tests ended, and when flames went out, across oxygen levels." },
-  { href: "/sources", title: "Check the evidence trail", body: "DOIs, source files, units and every data-cleaning decision." },
 ];
 
 export function OverviewActions() {

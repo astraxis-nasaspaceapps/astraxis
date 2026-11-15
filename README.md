@@ -8,6 +8,10 @@ Built by team Astraxis for the **NASA Space Apps Challenge 2026**, challenge *Fl
 Safety Insights from Microgravity Combustion Data*.
 
 ## What it does
+- **Habitat Fire Lab**: design a habitat atmosphere (oxygen and cabin pressure) on a map coloured by the flame-out
+  model, with real NASA tests as dots, the Moon-base target, and atmospheres NASA has considered for crews
+  (from the ACME BRE catalog entry). Click a point to see an animated microgravity flame play out the most likely
+  outcome. Outside NASA's tested range it refuses to predict and links to the evidence gaps.
 - **Overview**: every FLEX droplet test as one dot, by oxygen level and outcome.
 - **Experiment Explorer**: 403 test records (274 FLEX, 129 BASS-II) with search, filters, units, data-quality notes
   and the original NASA row for each test.

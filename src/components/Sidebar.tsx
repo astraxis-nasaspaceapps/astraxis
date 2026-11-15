@@ -9,6 +9,7 @@ import { usePalette } from "./CommandPalette";
 
 const NAV = [
   { href: "/", label: "Overview" },
+  { href: "/lab", label: "Habitat Fire Lab" },
   { href: "/explorer", label: "Experiment Explorer" },
   { href: "/compare", label: "Compare" },
   { href: "/habitat", label: "Habitat conditions" },

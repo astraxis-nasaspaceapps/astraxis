@@ -10,6 +10,7 @@ type Item = { key: string; group: string; title: string; hint?: string; href: st
 
 const PAGES: Item[] = [
   { key: "p-overview", group: "Go to", title: "Overview", hint: "Every FLEX test at a glance", href: "/" },
+  { key: "p-lab", group: "Go to", title: "Habitat Fire Lab", hint: "Design a habitat atmosphere and see what a fire would do in it", href: "/lab" },
   { key: "p-explorer", group: "Go to", title: "Experiment Explorer", hint: "Filter and inspect all 403 tests", href: "/explorer" },
   { key: "p-compare", group: "Go to", title: "Compare", hint: "Charts: outcome, flame-out size, burning rate vs oxygen", href: "/compare" },
   { key: "p-habitat", group: "Go to", title: "Habitat conditions", hint: "Tests nearest to Moon-base air: 30% O₂ or more at about 0.7 atm", href: "/habitat" },
