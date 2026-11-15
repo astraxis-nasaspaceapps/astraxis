@@ -3,7 +3,7 @@ import catalogJson from "@/data/psi_catalog.json";
 export type CriterionKey = "o2" | "lowp" | "materials" | "safety" | "flight";
 export interface Criterion { v: boolean | null; ev: string }
 export interface CatalogInvestigation {
-  id: string; acronym: string; title: string; subarea: string; url: string; inAstraxis: boolean;
+  id: string; acronym: string; title: string; subarea: string; url: string; inAstraxis: boolean; dataLabel?: string; dataHref?: string;
   criteria: Record<CriterionKey, Criterion>;
 }
 export interface RankedInvestigation extends CatalogInvestigation { score: number; rank: number; insideTarget: boolean }
@@ -41,7 +41,7 @@ export function catalogEvidence(): string {
   return rankedInvestigations()
     .map((r) => {
       const met = CRITERIA.filter((c) => r.criteria[c.key].v === true).map((c) => `${c.short}: ${r.criteria[c.key].ev}`);
-      return `${r.id} ${r.acronym || "(ground study)"} "${r.title}" | rank ${r.rank}, score ${r.score}/5 | ${r.inAstraxis ? "full test data in Astraxis" : "catalog description only"}${met.length ? " | " + met.join(" | ") : ""}`;
+      return `${r.id} ${r.acronym || "(ground study)"} "${r.title}" | rank ${r.rank}, score ${r.score}/5 | ${r.inAstraxis ? (r.dataLabel ?? "data in Astraxis").toLowerCase() : "catalog description only"}${met.length ? " | " + met.join(" | ") : ""}`;
     })
     .join("\n");
 }

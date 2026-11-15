@@ -12,7 +12,9 @@ const NAV = [
   { href: "/explorer", label: "Experiment Explorer" },
   { href: "/compare", label: "Compare" },
   { href: "/habitat", label: "Habitat conditions" },
+  { href: "/materials", label: "Spacecraft materials" },
   { href: "/investigations", label: "Investigations ranked" },
+  { href: "/model", label: "Flame-out model" },
   { href: "/assistant", label: "Research Assistant" },
   { href: "/sources", label: "Sources and data notes" },
 ];

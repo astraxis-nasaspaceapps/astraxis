@@ -32,7 +32,7 @@ export function InvestigationRanking({ rows, criteria, retrieved }: { rows: Rank
             <p className="mt-2 text-sm leading-relaxed text-ink-300">
               {r.insideTarget ? `Habitat-level oxygen and low pressure: ${r.criteria.o2.ev}` : r.criteria.materials.v ? `Spacecraft materials: ${r.criteria.materials.ev}` : r.criteria.safety.ev}
             </p>
-            <div className="mt-3">{r.inAstraxis ? <Badge tone="accent">Full test data in Astraxis</Badge> : <Badge>Catalog description only</Badge>}</div>
+            <div className="mt-3">{r.inAstraxis ? <Badge tone="accent">{r.dataLabel}</Badge> : <Badge>Catalog description only</Badge>}</div>
           </Card>
         ))}
       </div>
@@ -71,7 +71,7 @@ export function InvestigationRanking({ rows, criteria, retrieved }: { rows: Rank
                         <span className="font-medium text-ink-100">{r.acronym || "Ground study"}</span> <span className="text-xs text-ink-400">{r.id}</span>
                         <span className="block max-w-[340px] truncate text-xs text-ink-400">{r.title}</span>
                       </button>
-                      {r.inAstraxis && <span className="mt-1 block"><Badge tone="accent">Full test data in Astraxis</Badge></span>}
+                      {r.inAstraxis && <span className="mt-1 block"><Badge tone="accent">{r.dataLabel}</Badge></span>}
                     </td>
                     {criteria.map((c) => <td key={c.key} className="px-3 py-2"><Mark v={r.criteria[c.key].v} /></td>)}
                     <td className="px-3 py-2 text-right tabular-nums font-medium text-ink-100">{r.score}/5</td>
@@ -91,7 +91,7 @@ export function InvestigationRanking({ rows, criteria, retrieved }: { rows: Rank
                         <div className="mt-3 flex flex-wrap gap-4 text-xs">
                           <a href={r.url} target="_blank" rel="noreferrer" className="text-accent hover:underline">Open NASA&apos;s PSI page for {r.id}</a>
                           {r.id === "PSI-69" && <Link href="/habitat" className="text-accent hover:underline">See its tests nearest to habitat air</Link>}
-                          {r.inAstraxis && <Link href={`/explorer`} className="text-accent hover:underline">Browse its tests in the Explorer</Link>}
+                          {r.inAstraxis && r.dataHref && <Link href={r.dataHref} className="text-accent hover:underline">Browse its data in Astraxis</Link>}
                         </div>
                       </td>
                     </tr>
@@ -106,7 +106,7 @@ export function InvestigationRanking({ rows, criteria, retrieved }: { rows: Rank
       <Card className="p-5">
         <h2 className="text-base font-semibold text-ink-100">What this ranking can&apos;t tell you</h2>
         <ul className="mt-2 max-w-3xl list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-ink-300">
-          <li>Marks come from NASA&apos;s catalog descriptions (retrieved {retrieved}), not from each investigation&apos;s full data. Only FLEX (PSI-69) and BASS-II (PSI-25) have their test tables cleaned and searchable in Astraxis; FLEX&apos;s oxygen mark also uses that table.</li>
+          <li>Marks come from NASA&apos;s catalog descriptions (retrieved {retrieved}), not from each investigation&apos;s full data. FLEX (PSI-69) and BASS-II (PSI-25) have full test tables in Astraxis, and SAFFIRE I–III (PSI-98, 99, 100) have their test tables on the Spacecraft materials page; FLEX&apos;s oxygen mark also uses its table.</li>
           <li>&ldquo;Not stated&rdquo; means the catalog entry doesn&apos;t say, not that the investigation didn&apos;t test it.</li>
           <li>All flight investigations ran in microgravity. None of them can predict fire behaviour in lunar or Martian gravity.</li>
         </ul>

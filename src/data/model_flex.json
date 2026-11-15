@@ -1,0 +1,156 @@
+{
+ "target": "Flame went out (NASA test end = Extinction)",
+ "features": [
+  "o2",
+  "p",
+  "heptane",
+  "co2",
+  "he",
+  "d0"
+ ],
+ "labels": {
+  "o2": "Initial oxygen (%)",
+  "p": "Pressure (atm)",
+  "heptane": "Fuel is heptane (vs methanol)",
+  "co2": "Added CO₂ (%)",
+  "he": "Added helium (%)",
+  "d0": "Initial droplet diameter (mm)"
+ },
+ "mean": [
+  20.103448275862068,
+  0.946003831417624,
+  0.41379310344827586,
+  12.337164750957854,
+  4.827586206896552,
+  3.000804597701149
+ ],
+ "scale": [
+  4.736831674895166,
+  0.3647705571620239,
+  0.49251230541674823,
+  17.607070321171978,
+  11.315273199687427,
+  0.6952089215311916
+ ],
+ "coef": [
+  -1.880349877534644,
+  0.0029206882949710283,
+  -0.6134791447401927,
+  0.29153319132191424,
+  0.46119510417552134,
+  0.7999818126817199
+ ],
+ "intercept": 1.2223534748434488,
+ "ranges": {
+  "o2": [
+   12.0,
+   34.0
+  ],
+  "p": [
+   0.692,
+   3.053
+  ],
+  "heptane": [
+   0.0,
+   1.0
+  ],
+  "co2": [
+   0.0,
+   70.0
+  ],
+  "he": [
+   0.0,
+   45.0
+  ],
+  "d0": [
+   1.1,
+   4.67
+  ]
+ },
+ "n": 261,
+ "excluded": 13,
+ "flameOutRate": 0.686,
+ "cv": {
+  "method": "5-fold stratified cross-validation, repeated 20 times",
+  "models": [
+   {
+    "name": "Always guess the most common outcome",
+    "accuracy": 0.686,
+    "auc": 0.5
+   },
+   {
+    "name": "Oxygen only (logistic)",
+    "accuracy": 0.789,
+    "auc": 0.817
+   },
+   {
+    "name": "Astraxis model: all six factors (logistic)",
+    "accuracy": 0.831,
+    "auc": 0.879,
+    "brier": 0.125,
+    "chosen": true
+   },
+   {
+    "name": "Gradient boosting (complex, for comparison)",
+    "accuracy": 0.829,
+    "auc": 0.882
+   }
+  ]
+ },
+ "calibration": [
+  {
+   "band": "12–15% O₂",
+   "n": 45,
+   "observed": 0.933,
+   "predicted": 0.939
+  },
+  {
+   "band": "16–19% O₂",
+   "n": 71,
+   "observed": 0.859,
+   "predicted": 0.836
+  },
+  {
+   "band": "20–23% O₂",
+   "n": 99,
+   "observed": 0.677,
+   "predicted": 0.684
+  },
+  {
+   "band": "24–29% O₂",
+   "n": 23,
+   "observed": 0.304,
+   "predicted": 0.374
+  },
+  {
+   "band": "30–34% O₂",
+   "n": 23,
+   "observed": 0.087,
+   "predicted": 0.049
+  }
+ ],
+ "diluentRanges": {
+  "CO2": [
+   5.0,
+   70.0
+  ],
+  "He": [
+   5.0,
+   45.0
+  ]
+ },
+ "o2ByDiluent": {
+  "N2": [
+   12.0,
+   34.0
+  ],
+  "CO2": [
+   14.0,
+   25.0
+  ],
+  "He": [
+   13.0,
+   24.0
+  ]
+ }
+}

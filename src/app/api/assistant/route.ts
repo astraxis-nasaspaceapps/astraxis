@@ -1,5 +1,6 @@
 import { activeProvider, complete } from "@/lib/llm";
 import { catalogEvidence, catalog, rankedInvestigations, CRITERIA } from "@/lib/catalog";
+import saffireJson from "@/data/saffire.json";
 import { evidenceStats, investigationContext, parseQuestion, search, stratify } from "@/lib/retrieval";
 
 const SYSTEM = `You are the Astraxis research assistant. You explain NASA microgravity combustion evidence to researchers and engineers.
@@ -16,8 +17,9 @@ Rules, all mandatory:
 5. If the evidence cannot answer the question, say so plainly and say what data would be needed.
 6. The FLEX burning-rate unit is unverified: never attach a unit to burning-rate values. Band medians of burning rate are over ALL tests in the band, not only tests that ended in extinction.
 7. BASS-II records contain test conditions only, not outcomes or flame spread rates: never claim BASS-II outcomes.
-8. If a PSI CATALOG RANKING is in the evidence, never state any rank, score or ordering yourself: when the question asks which investigations matter most, the server inserts the exact ranked list at the top of your answer. You may discuss the investigations named in that ranking, citing them as [PSI-20]. Make clear that catalog-only investigations are judged from NASA's catalog descriptions, not their test data, and that only PSI-69 and PSI-25 have full test data in Astraxis. Only ever cite IDs of the form PSI-<number> or PSI-<number>:<record>; never cite section names.
-9. Plain text only. You may use "- " bullets and **bold**. Under 260 words.`;
+8. If a PSI CATALOG RANKING is in the evidence, never state any rank, score or ordering yourself: when the question asks which investigations matter most, the server inserts the exact ranked list at the top of your answer. You may discuss the investigations named in that ranking, citing them as [PSI-20]. Make clear that catalog-only investigations are judged from NASA's catalog descriptions, not their test data, and that PSI-69 and PSI-25 have full test data in Astraxis and SAFFIRE I–III (PSI-98, PSI-99, PSI-100) have small test tables. Only ever cite IDs of the form PSI-<number> or PSI-<number>:<record>; never cite section names.
+9. If SAFFIRE SAMPLES are in the evidence, quote burn lengths exactly as NASA wrote them (e.g. "~ 0", "Complete"); never turn words into numbers. Say they ran in ordinary cabin air (about 21.5–22% O2), not habitat oxygen. Cite samples as [PSI-99:2-1].
+10. Plain text only. You may use "- " bullets and **bold**. Under 260 words.`;
 
 export async function POST(req: Request) {
   const { question } = (await req.json().catch(() => ({}))) as { question?: string };
@@ -43,6 +45,12 @@ export async function POST(req: Request) {
 
   const askAboutInvestigations = /investigation|experiment|relevan|rank|habitat|spacecraft|moon base|rover|which (study|studies)|most useful|equipment|saffire|bass\b|same\b|acme/i.test(q);
   const askForRanking = askAboutInvestigations && /\b(most|rank\w*|relevan\w*|important|best|priorit\w*|top|matter\w*|useful)\b|which (psi )?(investigation|experiment|stud)/i.test(q) && /investigation|experiment|stud(y|ies)|dataset|data set/i.test(q);
+  const askAboutMaterials = /material|fabric|saffire|silicone|pmma|nomex|sibal|plastic|cotton|cabin|1-g|normal gravity|screening/i.test(q);
+  const saffire = saffireJson as unknown as { samples: { record_id: string; acronym: string; material: string | null; thickness: string | null; o2: string | null; direction: string | null; burn_time: string | null; ug_burn_length: string | null; ug_spread: string | null; g1_burn_length: string | null; g1_spread: string | null; comparison: string | null }[]; summary: Record<string, number> };
+  const saffireEvidence = askAboutMaterials
+    ? `SAFFIRE SAMPLES (NASA PSI-98/99/100 experimental tables; spacecraft materials burned in an uncrewed Cygnus vehicle after it left the ISS; values exactly as NASA wrote them; summary of the 9 SAFFIRE-II samples: ${JSON.stringify(saffire.summary)}):\n` +
+      saffire.samples.map((x) => `${x.record_id} (${x.acronym}): ${x.material ?? "material blank in NASA's table"}, thickness ${x.thickness}, O2 ${x.o2 ?? "not in table"}, flow ${x.direction}, burn time ${x.burn_time ?? "not in table"}${x.ug_burn_length !== null ? `, microgravity burn length ${x.ug_burn_length}, microgravity spread ${x.ug_spread}, 1-g burn length ${x.g1_burn_length}, 1-g spread ${x.g1_spread}, result ${x.comparison}` : ""}`).join("\n")
+    : "";
   if (provider && ranked.length) {
     const evidence = [
       `QUESTION: ${q}`,
@@ -52,6 +60,7 @@ export async function POST(req: Request) {
       `STATISTICS OVER ALL ${subset.length} MATCHING TESTS: ${JSON.stringify(stats)}`,
       `TOP ${top.length} MATCHING TEST RECORDS (record ID: summary):`,
       ...top.map((r) => `${r.id}: ${r.summary}${r.flags ? ` [has ${r.flags} data note(s)]` : ""}`),
+      saffireEvidence,
       askAboutInvestigations ? `PSI CATALOG RANKING (all ${catalog.investigations.length} PSI combustion investigations, ranked by 5 habitat fire-safety criteria: 30%+ O2, low pressure, spacecraft materials, fire-safety use, flight data; evidence quoted from NASA's catalog):\n${catalogEvidence()}` : "",
     ].filter(Boolean).join("\n");
     try {
@@ -59,7 +68,7 @@ export async function POST(req: Request) {
       model = r.model;
       // Citation check: keep only IDs that exist in the evidence the model was given.
       // Allowed = exactly the records the model was shown, plus the matched investigations.
-      const allowed = new Set<string>([...top.map((x) => x.id), ...invIds, ...(askAboutInvestigations ? catalog.investigations.map((i) => i.id) : [])]);
+      const allowed = new Set<string>([...top.map((x) => x.id), ...invIds, ...(askAboutInvestigations ? catalog.investigations.map((i) => i.id) : []), ...(askAboutMaterials ? [...saffire.samples.map((x) => x.record_id), "PSI-98", "PSI-99", "PSI-100"] : [])]);
       const removed: string[] = [];
       answer = r.text.replace(/\[([^\]]+)\]/g, (full, inner: string) => {
         // expand shorthand like "PSI-69:059, 066" to "PSI-69:059, PSI-69:066" so every ID gets checked

@@ -1,0 +1,351 @@
+{
+ "investigations": [
+  {
+   "id": "PSI-98",
+   "acronym": "SAFFIRE-I",
+   "title": "Spacecraft Fire Safety Experiment-I",
+   "doi": "10.60555/0t15-1z43",
+   "file": "PSI-98_Experimental table_SAFFIRE-1.csv"
+  },
+  {
+   "id": "PSI-99",
+   "acronym": "SAFFIRE-II",
+   "title": "Spacecraft Fire Experiment-II",
+   "doi": "10.60555/2chp-m469",
+   "file": "PSI-99_Experimental table_SAFFIRE-2.csv"
+  },
+  {
+   "id": "PSI-100",
+   "acronym": "SAFFIRE-III",
+   "title": "Spacecraft Fire Experiment-III",
+   "doi": "10.60555/040q-4h36",
+   "file": "PSI-100_Experimental table_SAFFIRE-3.csv"
+  }
+ ],
+ "samples": [
+  {
+   "record_id": "PSI-98:S1",
+   "investigation_id": "PSI-98",
+   "acronym": "SAFFIRE-I",
+   "sample": "S1",
+   "material": "SIBAL Fabric",
+   "thickness": "0.37",
+   "size": "40.6 × 94",
+   "airflow": "20",
+   "direction": "Concurrent",
+   "o2": "21.5 - 21.7",
+   "burn_time": "420",
+   "ug_burn_length": null,
+   "ug_spread": null,
+   "g1_burn_length": null,
+   "g1_spread": null,
+   "comparison": null
+  },
+  {
+   "record_id": "PSI-98:S2",
+   "investigation_id": "PSI-98",
+   "acronym": "SAFFIRE-I",
+   "sample": "S2",
+   "material": "SIBAL Fabric",
+   "thickness": "0.37",
+   "size": "40.6 × 94",
+   "airflow": "20",
+   "direction": "Opposed",
+   "o2": "~ 21.5",
+   "burn_time": "70",
+   "ug_burn_length": null,
+   "ug_spread": null,
+   "g1_burn_length": null,
+   "g1_spread": null,
+   "comparison": null
+  },
+  {
+   "record_id": "PSI-100:S1",
+   "investigation_id": "PSI-100",
+   "acronym": "SAFFIRE-III",
+   "sample": "S1",
+   "material": "SIBAL Fabric",
+   "thickness": ".33 cm",
+   "size": "94 cm × 40.6 cm",
+   "airflow": "30 cm/s",
+   "direction": "Concurrent",
+   "o2": null,
+   "burn_time": null,
+   "ug_burn_length": null,
+   "ug_spread": null,
+   "g1_burn_length": null,
+   "g1_spread": null,
+   "comparison": null
+  },
+  {
+   "record_id": "PSI-100:S2",
+   "investigation_id": "PSI-100",
+   "acronym": "SAFFIRE-III",
+   "sample": "S2",
+   "material": "SIBAL Fabric",
+   "thickness": ".33 cm",
+   "size": "94 cm × 40.6 cm",
+   "airflow": "30 cm/s",
+   "direction": "Opposed",
+   "o2": null,
+   "burn_time": null,
+   "ug_burn_length": null,
+   "ug_spread": null,
+   "g1_burn_length": null,
+   "g1_spread": null,
+   "comparison": null
+  },
+  {
+   "record_id": "PSI-99:2-1",
+   "investigation_id": "PSI-99",
+   "acronym": "SAFFIRE-II",
+   "sample": "2-1",
+   "material": "Silicone",
+   "thickness": "0.27 mm",
+   "size": "29 cm × 5 cm cm",
+   "airflow": "20 cm/s",
+   "direction": "Concurrent",
+   "o2": "~ 21.5",
+   "burn_time": "Insignificant",
+   "ug_burn_length": "~ 0",
+   "ug_spread": "n/a",
+   "g1_burn_length": "Complete",
+   "g1_spread": "Acceleratory",
+   "comparison": "less"
+  },
+  {
+   "record_id": "PSI-99:2-2",
+   "investigation_id": "PSI-99",
+   "acronym": "SAFFIRE-II",
+   "sample": "2-2",
+   "material": "Silicone",
+   "thickness": "0.61 mm",
+   "size": "29 cm × 5 cm cm",
+   "airflow": "20 cm/s",
+   "direction": "Concurrent",
+   "o2": "~ 22.1",
+   "burn_time": "Insignificant",
+   "ug_burn_length": "~ 0",
+   "ug_spread": "n/a",
+   "g1_burn_length": "7.6 cm",
+   "g1_spread": "1.2 mm/s",
+   "comparison": "less"
+  },
+  {
+   "record_id": "PSI-99:2-3",
+   "investigation_id": "PSI-99",
+   "acronym": "SAFFIRE-II",
+   "sample": "2-3",
+   "material": "Silicone",
+   "thickness": "1.03 mm",
+   "size": "29 cm × 5 cm cm",
+   "airflow": "20 cm/s",
+   "direction": "Concurrent",
+   "o2": "~ 22.1",
+   "burn_time": "Insignificant",
+   "ug_burn_length": "~ 0",
+   "ug_spread": "n/a",
+   "g1_burn_length": "~ 0",
+   "g1_spread": "n/a",
+   "comparison": "neither"
+  },
+  {
+   "record_id": "PSI-99:2-4",
+   "investigation_id": "PSI-99",
+   "acronym": "SAFFIRE-II",
+   "sample": "2-4",
+   "material": "Silicone",
+   "thickness": "037 mm",
+   "size": "29 cm × 5 cm cm",
+   "airflow": "20 cm/s",
+   "direction": "Opposed",
+   "o2": "~ 22.1",
+   "burn_time": "Insignificant",
+   "ug_burn_length": "~ 0",
+   "ug_spread": "n/a",
+   "g1_burn_length": "Complete",
+   "g1_spread": "0.6 mm/s",
+   "comparison": "less"
+  },
+  {
+   "record_id": "PSI-99:2-5",
+   "investigation_id": "PSI-99",
+   "acronym": "SAFFIRE-II",
+   "sample": "2-5",
+   "material": "Cotton-Fiberglass (SIBAL)",
+   "thickness": "037 mm",
+   "size": "29 cm × 5 cm cm",
+   "airflow": "20 cm/s",
+   "direction": "Concurrent",
+   "o2": "~ 22.1",
+   "burn_time": "145 s",
+   "ug_burn_length": "29 cm",
+   "ug_spread": "2.1 mm/s",
+   "g1_burn_length": "Complete",
+   "g1_spread": "Acceleratory",
+   "comparison": "full_both"
+  },
+  {
+   "record_id": "PSI-99:2-6",
+   "investigation_id": "PSI-99",
+   "acronym": "SAFFIRE-II",
+   "sample": "2-6",
+   "material": null,
+   "thickness": "037 mm",
+   "size": "29 cm × 5 cm cm",
+   "airflow": "20 cm/s",
+   "direction": "Concurrent",
+   "o2": "~ 22.1",
+   "burn_time": "115 s",
+   "ug_burn_length": "29 cm",
+   "ug_spread": "2.6 mm/s",
+   "g1_burn_length": "Complete",
+   "g1_spread": "Acceleratory",
+   "comparison": "full_both"
+  },
+  {
+   "record_id": "PSI-99:2-7",
+   "investigation_id": "PSI-99",
+   "acronym": "SAFFIRE-II",
+   "sample": "2-7",
+   "material": "PMMA & Nomex",
+   "thickness": "0.85 and 0.37 mm",
+   "size": "5 and 24 cm × 5 cm cm",
+   "airflow": "20 cm/s",
+   "direction": "Concurrent",
+   "o2": "~ 22.1",
+   "burn_time": "140 s",
+   "ug_burn_length": "5 cm & 0 (note 2)",
+   "ug_spread": "n/a (Nomex)",
+   "g1_burn_length": "~ 0 (Nomex)",
+   "g1_spread": "n/a (Nomex)",
+   "comparison": "not_comparable"
+  },
+  {
+   "record_id": "PSI-99:2-8",
+   "investigation_id": "PSI-99",
+   "acronym": "SAFFIRE-II",
+   "sample": "2-8",
+   "material": "PMMA",
+   "thickness": "See Fig. 5",
+   "size": "29 cm × 5 cm cm",
+   "airflow": "20 cm/s",
+   "direction": "Concurrent",
+   "o2": "22.1 to 22.0",
+   "burn_time": "600 s",
+   "ug_burn_length": "~ 10 cm (note 3)",
+   "ug_spread": "Note 4",
+   "g1_burn_length": "Complete",
+   "g1_spread": "Acceleratory",
+   "comparison": "less"
+  },
+  {
+   "record_id": "PSI-99:2-9",
+   "investigation_id": "PSI-99",
+   "acronym": "SAFFIRE-II",
+   "sample": "2-9",
+   "material": null,
+   "thickness": "1 cm",
+   "size": "29 cm × 5 cm cm",
+   "airflow": "20 cm/s",
+   "direction": "Concurrent",
+   "o2": "22.0 to 21.9",
+   "burn_time": "900 s",
+   "ug_burn_length": "~ 10 cm (note 4)",
+   "ug_spread": "Note 4",
+   "g1_burn_length": "Complete",
+   "g1_spread": "Acceleratory",
+   "comparison": "less"
+  }
+ ],
+ "cleaning_log": [
+  {
+   "record_id": "PSI-98:S1",
+   "field": "size",
+   "issue": "Units as in NASA header: thickness, length and width in cm (length 40.6, width 94 in the table)."
+  },
+  {
+   "record_id": "PSI-98:S2",
+   "field": "size",
+   "issue": "Units as in NASA header: thickness, length and width in cm (length 40.6, width 94 in the table)."
+  },
+  {
+   "record_id": "PSI-100:S1",
+   "field": "o2",
+   "issue": "No oxygen, burn time or burn length columns in NASA's SAFFIRE-III table: conditions only."
+  },
+  {
+   "record_id": "PSI-100:S2",
+   "field": "o2",
+   "issue": "No oxygen, burn time or burn length columns in NASA's SAFFIRE-III table: conditions only."
+  },
+  {
+   "record_id": "PSI-99:2-4",
+   "field": "thickness",
+   "issue": "NASA's table reads \"037 mm\"; very likely 0.37 mm, shown as written."
+  },
+  {
+   "record_id": "PSI-99:2-5",
+   "field": "thickness",
+   "issue": "NASA's table reads \"037 mm\"; very likely 0.37 mm, shown as written."
+  },
+  {
+   "record_id": "PSI-99:2-6",
+   "field": "material",
+   "issue": "Material is blank in NASA's table (it may match the row above, but the table does not say)."
+  },
+  {
+   "record_id": "PSI-99:2-6",
+   "field": "thickness",
+   "issue": "NASA's table reads \"037 mm\"; very likely 0.37 mm, shown as written."
+  },
+  {
+   "record_id": "PSI-99:2-8",
+   "field": "thickness",
+   "issue": "Thickness refers to a figure not included in the table."
+  },
+  {
+   "record_id": "PSI-99:2-9",
+   "field": "material",
+   "issue": "Material is blank in NASA's table (it may match the row above, but the table does not say)."
+  },
+  {
+   "record_id": "PSI-99:*",
+   "field": "?-g Burn Length",
+   "issue": "Column header reads \"?-g\" in NASA's file (a character lost in encoding). It pairs with the 1-g columns, so Astraxis labels it microgravity."
+  },
+  {
+   "record_id": "PSI-99:*",
+   "field": "o2",
+   "issue": "NASA Note 1: Note 1 Derived from measured CO2 production and referenced to initial O2 concentration reported by ISS."
+  },
+  {
+   "record_id": "PSI-99:2-7",
+   "field": "ug_burn_length",
+   "issue": "NASA Note 2: Note 2 The PMMA portion was completely consumed but the Nomex was not ignited."
+  },
+  {
+   "record_id": "PSI-99:2-8",
+   "field": "ug_burn_length",
+   "issue": "NASA Note 3: Note 3 This is the length of fuel with significant visible damage."
+  },
+  {
+   "record_id": "PSI-99:2-9",
+   "field": "ug_burn_length",
+   "issue": "NASA cites Note 4 here; Note 3 (damage length) may be meant. Note 4 The flames remain anchored at the base of the sample which has a very slow regression rate (0.01 to 0.04 mm/s)"
+  }
+ ],
+ "notes": [
+  "Note 1 Derived from measured CO2 production and referenced to initial O2 concentration reported by ISS.",
+  "Note 2 The PMMA portion was completely consumed but the Nomex was not ignited.",
+  "Note 3 This is the length of fuel with significant visible damage.",
+  "Note 4 The flames remain anchored at the base of the sample which has a very slow regression rate (0.01 to 0.04 mm/s)"
+ ],
+ "comparison_rule": "Microgravity vs 1-g burn length per SAFFIRE-II sample: \"less\" when the microgravity burn length is smaller than the 1-g one; \"full_both\" when both burned the full sample; \"neither\" when both are about 0; \"not_comparable\" when the two columns describe different materials.",
+ "summary": {
+  "less": 5,
+  "neither": 1,
+  "full_both": 2,
+  "not_comparable": 1
+ }
+}

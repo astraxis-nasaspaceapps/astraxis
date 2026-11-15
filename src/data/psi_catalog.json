@@ -60,7 +60,9 @@
     }
    },
    "inAstraxis": true,
-   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69"
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+   "dataLabel": "Full test data in Astraxis",
+   "dataHref": "/explorer"
   },
   {
    "id": "PSI-68",
@@ -119,8 +121,10 @@
      "ev": "Project type: Microgravity Investigation."
     }
    },
-   "inAstraxis": false,
-   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98"
+   "inAstraxis": true,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+   "dataLabel": "Test table in Astraxis",
+   "dataHref": "/materials"
   },
   {
    "id": "PSI-99",
@@ -149,8 +153,10 @@
      "ev": "Project type: Microgravity Investigation."
     }
    },
-   "inAstraxis": false,
-   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-99"
+   "inAstraxis": true,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-99",
+   "dataLabel": "Test table in Astraxis",
+   "dataHref": "/materials"
   },
   {
    "id": "PSI-100",
@@ -179,8 +185,10 @@
      "ev": "Project type: Microgravity Investigation."
     }
    },
-   "inAstraxis": false,
-   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100"
+   "inAstraxis": true,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100",
+   "dataLabel": "Test table in Astraxis",
+   "dataHref": "/materials"
   },
   {
    "id": "PSI-26",
@@ -240,7 +248,9 @@
     }
    },
    "inAstraxis": true,
-   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25"
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+   "dataLabel": "Full test data in Astraxis",
+   "dataHref": "/explorer"
   },
   {
    "id": "PSI-102",
