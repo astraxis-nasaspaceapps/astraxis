@@ -1,0 +1,726 @@
+{
+ "retrieved": "2026-11-15",
+ "source": "NASA PSI repository catalog (psi.nasa.gov), Combustion Science investigations",
+ "investigations": [
+  {
+   "id": "PSI-20",
+   "acronym": "ACME BRE",
+   "title": "Advanced Combustion via Microgravity Experiments - Burning Rate Emulator",
+   "subarea": "Flames of Gaseous Fuels",
+   "criteria": {
+    "o2": {
+     "v": true,
+     "ev": "“NASA - considered atmosphere for human space missions will be examined: 14.7 psia, 21 % oxygen: 10.2 psia, 26.5 %; and 8.2 psia, 34 % oxygen.”"
+    },
+    "lowp": {
+     "v": true,
+     "ev": "Same statement: tests at 10.2 psia and 8.2 psia."
+    },
+    "materials": {
+     "v": false,
+     "ev": "Fuel is a gas burner that emulates a burning solid, not a spacecraft material."
+    },
+    "safety": {
+     "v": true,
+     "ev": "Keywords: “Fire Safety; Radiative Extinction; Extinction Limit; Flammability”."
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-20"
+  },
+  {
+   "id": "PSI-69",
+   "acronym": "FLEX",
+   "title": "Flame Extinguishment Experiment",
+   "subarea": "Spacecraft Fire Safety",
+   "criteria": {
+    "o2": {
+     "v": true,
+     "ev": "Astraxis’s cleaned PSI-69 table: 24 tests at 30–34% O₂, 17 of them at 0.70–0.71 atm."
+    },
+    "lowp": {
+     "v": true,
+     "ev": "“Select the test pressure (0.5 − 1.5 atm) for the LOI tests.”"
+    },
+    "materials": {
+     "v": false,
+     "ev": "Fuel is liquid fuel droplets (methanol, heptane), not a spacecraft material."
+    },
+    "safety": {
+     "v": true,
+     "ev": "“measure the effectiveness of various gaseous fire suppressants such as CO2, He”."
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": true,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69"
+  },
+  {
+   "id": "PSI-68",
+   "acronym": "FLEX-2",
+   "title": "Flame Extinguishment Experiment - 2",
+   "subarea": "Spacecraft Fire Safety",
+   "criteria": {
+    "o2": {
+     "v": true,
+     "ev": "“O2 concentration between 0.1 to 0.4 mole fraction”."
+    },
+    "lowp": {
+     "v": true,
+     "ev": "“varied in pressure between 0.5 atm to 3.0 atm”."
+    },
+    "materials": {
+     "v": false,
+     "ev": "Fuel is liquid fuel droplets (decane, ethanol and others), not a spacecraft material."
+    },
+    "safety": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-68"
+  },
+  {
+   "id": "PSI-98",
+   "acronym": "SAFFIRE-I",
+   "title": "Spacecraft Fire Safety Experiment-I",
+   "subarea": "Spacecraft Fire, Smoke Distribution",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "materials": {
+     "v": true,
+     "ev": "“a composite fabric called Sibal consisting of cotton on a fiberglass substrate”, sized to simulate “a large piece of flammable fabric”."
+    },
+    "safety": {
+     "v": true,
+     "ev": "“Results determine microgravity flammability limits for several spacecraft materials”."
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98"
+  },
+  {
+   "id": "PSI-99",
+   "acronym": "SAFFIRE-II",
+   "title": "Spacecraft Fire Experiment-II",
+   "subarea": "Surface Combustion",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "materials": {
+     "v": true,
+     "ev": "“SIBAL, silicone, structure PMMA, flat PMMA, and PMMA with Nomex”."
+    },
+    "safety": {
+     "v": true,
+     "ev": "“Results determine microgravity flammability limits for several spacecraft materials”."
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-99"
+  },
+  {
+   "id": "PSI-100",
+   "acronym": "SAFFIRE-III",
+   "title": "Spacecraft Fire Experiment-III",
+   "subarea": "Spacecraft Fire Safety",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "materials": {
+     "v": true,
+     "ev": "“also used SIBAL as the sample material”."
+    },
+    "safety": {
+     "v": true,
+     "ev": "“investigate the low-g flammability limits compared to those obtained in NASA’s normal gravity material flammability screening test”."
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100"
+  },
+  {
+   "id": "PSI-26",
+   "acronym": "BASS",
+   "title": "Burning and Suppression of Solids",
+   "subarea": "Spacecraft Fire Safety",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "materials": {
+     "v": true,
+     "ev": "“75% cotton and 25% fiberglass … as well as Nomex fabric and Ultem”."
+    },
+    "safety": {
+     "v": true,
+     "ev": "“Using nitrogen as a flame suppressant in microgravity provides a direct link to current and planned extinguishment techniques.”"
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26"
+  },
+  {
+   "id": "PSI-25",
+   "acronym": "BASS-II",
+   "title": "Burning and Suppression of Solids - II",
+   "subarea": "Spacecraft Fire Safety",
+   "criteria": {
+    "o2": {
+     "v": false,
+     "ev": "“oxygen varied below 21% by adding nitrogen”. Astraxis’s table: 13.6–22.2% starting O₂."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "materials": {
+     "v": true,
+     "ev": "“rods, spherical section, slabs, films, and fabric sheets” (PMMA, SIBAL fabric, Nomex in the test table)."
+    },
+    "safety": {
+     "v": true,
+     "ev": "“contribute to the combustion computational models used in the design of fire detection and suppression systems”."
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": true,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25"
+  },
+  {
+   "id": "PSI-102",
+   "acronym": "SAME",
+   "title": "Smoke and Aerosol Measurement Experiment",
+   "subarea": "Spacecraft Fire Safety",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "materials": {
+     "v": true,
+     "ev": "“smoke generated by overheated spacecraft materials”."
+    },
+    "safety": {
+     "v": true,
+     "ev": "“will provide technology for an advanced fire detector for future spacecraft”."
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102"
+  },
+  {
+   "id": "PSI-101",
+   "acronym": "SAME-R",
+   "title": "Smoke Aerosol Measurement Experiment-Reflight",
+   "subarea": "Spacecraft Fire Safety",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "materials": {
+     "v": true,
+     "ev": "Keywords: “Teflon; Cotton; Kapton; Silicon Rubber”."
+    },
+    "safety": {
+     "v": true,
+     "ev": "“can lead to technology for an advanced fire detector for future spacecraft”."
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101"
+  },
+  {
+   "id": "PSI-47",
+   "acronym": "DAFT / DAFT-2",
+   "title": "Dust and Aerosol Measurement Feasibility Test / Dust and Aerosol Measurement Feasibility Test-2",
+   "subarea": "Spacecraft Fire Safety",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "materials": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "safety": {
+     "v": true,
+     "ev": "“will impact the development of novel fire and smoke detection systems for the International Space Station”."
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-47"
+  },
+  {
+   "id": "PSI-39",
+   "acronym": "CFI",
+   "title": "Cool Flames Investigation",
+   "subarea": "Droplets",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": true,
+     "ev": "“at pressures ranging from 0.25 atm to 5 atm”."
+    },
+    "materials": {
+     "v": false,
+     "ev": "Fuel is liquid fuel droplets (n-dodecane), not a spacecraft material."
+    },
+    "safety": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-39"
+  },
+  {
+   "id": "PSI-107",
+   "acronym": "SPICE",
+   "title": "Smoke Point In Co-flow Experiment",
+   "subarea": "Fire Safety",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "materials": {
+     "v": false,
+     "ev": "Fuel is gaseous jet flames, not a spacecraft material."
+    },
+    "safety": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-107"
+  },
+  {
+   "id": "PSI-106",
+   "acronym": "SLICE",
+   "title": "Structure and Liftoff In Combustion Experiment",
+   "subarea": "Diffusion flames",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "materials": {
+     "v": false,
+     "ev": "Fuel is gaseous jet flames, not a spacecraft material."
+    },
+    "safety": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-106"
+  },
+  {
+   "id": "PSI-10",
+   "acronym": "ACME/Flame Design",
+   "title": "Advanced Combustion via Microgravity Experiments / Flame Design",
+   "subarea": "Flames of Gaseous Fuels",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Pressure was varied, but the catalog entry gives no values."
+    },
+    "materials": {
+     "v": false,
+     "ev": "Fuel is ethylene and methane, not a spacecraft material."
+    },
+    "safety": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-10"
+  },
+  {
+   "id": "PSI-159",
+   "acronym": "ACME CFI-G",
+   "title": "Advanced Combustion via Microgravity Experiments / Cool Flames Investigation with Gases",
+   "subarea": "Flames of Gaseous Fuels",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Pressure was varied, but the catalog entry gives no values."
+    },
+    "materials": {
+     "v": false,
+     "ev": "Fuel is propane, n-butane and n-pentane, not a spacecraft material."
+    },
+    "safety": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159"
+  },
+  {
+   "id": "PSI-21",
+   "acronym": "ACME CLD Flame",
+   "title": "Advanced Combustion via Microgravity Experiments / Coflow Laminar Diffusion Flame",
+   "subarea": "Flames of gaseous fuel",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "materials": {
+     "v": false,
+     "ev": "Fuel is methane and ethylene, not a spacecraft material."
+    },
+    "safety": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-21"
+  },
+  {
+   "id": "PSI-23",
+   "acronym": "ACME s-Flame",
+   "title": "Advanced Combustion via Microgravity Experiments-Structure and Response of Spherical Diffusion Flames",
+   "subarea": "Flames of gaseous fuels",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "materials": {
+     "v": false,
+     "ev": "Fuel is hydrogen and methane mixtures, not a spacecraft material."
+    },
+    "safety": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-23"
+  },
+  {
+   "id": "PSI-22",
+   "acronym": "ACME E-FIELD Flames",
+   "title": "Advanced Combustion via Microgravity Experiments Electric-Field Effects on Laminar Diffusion Flames",
+   "subarea": "Laminar Flames",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "materials": {
+     "v": false,
+     "ev": "Fuel is methane, not a spacecraft material."
+    },
+    "safety": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "flight": {
+     "v": true,
+     "ev": "Project type: Microgravity Investigation."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-22"
+  },
+  {
+   "id": "PSI-62",
+   "acronym": "",
+   "title": "Concurrent Flame Spread Modeling using Flamelet Generated Manifolds in Microgravity with Comparison to BASS Experiments using Two-Color Tomography",
+   "subarea": "Spacecraft Fire Safety",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "materials": {
+     "v": true,
+     "ev": "Models “flat sheets, spheres, and rod-shaped polymethyl methacrylate (PMMA) samples”."
+    },
+    "safety": {
+     "v": true,
+     "ev": "“enable accurate prediction of flammability limits for spacecraft materials”."
+    },
+    "flight": {
+     "v": false,
+     "ev": "Project type: Ground Investigation (modeling or lab work using flight data)."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62"
+  },
+  {
+   "id": "PSI-115",
+   "acronym": "",
+   "title": "Utilization of the Smoke Aerosol Measurement Experiment Data for Advanced Modeling and Simulation of Smoke Generation in Micro-Gravity",
+   "subarea": "Smoke Aerosol, Combustion Simulation",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "materials": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "safety": {
+     "v": true,
+     "ev": "“would directly lead to better smoke detection devices”."
+    },
+    "flight": {
+     "v": false,
+     "ev": "Project type: Ground Investigation (modeling or lab work using flight data)."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-115"
+  },
+  {
+   "id": "PSI-60",
+   "acronym": "",
+   "title": "Computational and Experimental Analysis of SPICE Data Sets",
+   "subarea": "Gaseous",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "materials": {
+     "v": false,
+     "ev": "Fuel is gaseous jet flames, not a spacecraft material."
+    },
+    "safety": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "flight": {
+     "v": false,
+     "ev": "Project type: Ground Investigation (modeling or lab work using flight data)."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-60"
+  },
+  {
+   "id": "PSI-142",
+   "acronym": "",
+   "title": "Quantitative Studies of Cool Flame Transitions at Radiation / Stretch Extinction Using Counterflow Flames",
+   "subarea": "Spacecraft Fire Safety",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "materials": {
+     "v": false,
+     "ev": "Fuel is laboratory counterflow flames (n-alkanes, dibutyl ether), not a spacecraft material."
+    },
+    "safety": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "flight": {
+     "v": false,
+     "ev": "Project type: Ground Investigation (modeling or lab work using flight data)."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-142"
+  },
+  {
+   "id": "PSI-117",
+   "acronym": "",
+   "title": "Effect of External Thermo-Convective Perturbation on Cool Flame Dynamics: A Multidimensional Multi-Physics CFD Analysis",
+   "subarea": "Droplet",
+   "criteria": {
+    "o2": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "lowp": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "materials": {
+     "v": false,
+     "ev": "Fuel is liquid fuel droplets (modeled), not a spacecraft material."
+    },
+    "safety": {
+     "v": null,
+     "ev": "Not stated in the PSI catalog entry."
+    },
+    "flight": {
+     "v": false,
+     "ev": "Project type: Ground Investigation (modeling or lab work using flight data)."
+    }
+   },
+   "inAstraxis": false,
+   "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-117"
+  }
+ ]
+}

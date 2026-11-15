@@ -1,4 +1,5 @@
 import { activeProvider, complete } from "@/lib/llm";
+import { catalogEvidence, catalog } from "@/lib/catalog";
 import { evidenceStats, investigationContext, parseQuestion, search, stratify } from "@/lib/retrieval";
 
 const SYSTEM = `You are the Astraxis research assistant. You explain NASA microgravity combustion evidence to researchers and engineers.
@@ -15,7 +16,8 @@ Rules, all mandatory:
 5. If the evidence cannot answer the question, say so plainly and say what data would be needed.
 6. The FLEX burning-rate unit is unverified: never attach a unit to burning-rate values. Band medians of burning rate are over ALL tests in the band, not only tests that ended in extinction.
 7. BASS-II records contain test conditions only, not outcomes or flame spread rates: never claim BASS-II outcomes.
-8. Plain text only. You may use "- " bullets and **bold**. Under 260 words.`;
+8. If a PSI CATALOG RANKING is in the evidence, use it for questions about which investigations matter most. Cite investigations as [PSI-20]. Say plainly that catalog-only investigations are ranked from NASA's catalog descriptions, not from their test data, and that only PSI-69 and PSI-25 have full test data in Astraxis.
+9. Plain text only. You may use "- " bullets and **bold**. Under 260 words.`;
 
 export async function POST(req: Request) {
   const { question } = (await req.json().catch(() => ({}))) as { question?: string };
@@ -39,6 +41,7 @@ export async function POST(req: Request) {
   let model: string | null = null;
   const provider = activeProvider();
 
+  const askAboutInvestigations = /investigation|experiment|relevan|rank|habitat|spacecraft|moon base|rover|which (study|studies)|most useful|equipment|saffire|bass\b|same\b|acme/i.test(q);
   if (provider && ranked.length) {
     const evidence = [
       `QUESTION: ${q}`,
@@ -48,13 +51,14 @@ export async function POST(req: Request) {
       `STATISTICS OVER ALL ${subset.length} MATCHING TESTS: ${JSON.stringify(stats)}`,
       `TOP ${top.length} MATCHING TEST RECORDS (record ID: summary):`,
       ...top.map((r) => `${r.id}: ${r.summary}${r.flags ? ` [has ${r.flags} data note(s)]` : ""}`),
+      askAboutInvestigations ? `PSI CATALOG RANKING (all ${catalog.investigations.length} PSI combustion investigations, ranked by 5 habitat fire-safety criteria: 30%+ O2, low pressure, spacecraft materials, fire-safety use, flight data; evidence quoted from NASA's catalog):\n${catalogEvidence()}` : "",
     ].filter(Boolean).join("\n");
     try {
       const r = await complete(SYSTEM, evidence);
       model = r.model;
       // Citation check: keep only IDs that exist in the evidence the model was given.
       // Allowed = exactly the records the model was shown, plus the matched investigations.
-      const allowed = new Set<string>([...top.map((x) => x.id), ...invIds]);
+      const allowed = new Set<string>([...top.map((x) => x.id), ...invIds, ...(askAboutInvestigations ? catalog.investigations.map((i) => i.id) : [])]);
       const removed: string[] = [];
       answer = r.text.replace(/\[([^\]]+)\]/g, (full, inner: string) => {
         // expand shorthand like "PSI-69:059, 066" to "PSI-69:059, PSI-69:066" so every ID gets checked

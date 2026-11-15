@@ -12,6 +12,8 @@ const PAGES: Item[] = [
   { key: "p-overview", group: "Go to", title: "Overview", hint: "Every FLEX test at a glance", href: "/" },
   { key: "p-explorer", group: "Go to", title: "Experiment Explorer", hint: "Filter and inspect all 403 tests", href: "/explorer" },
   { key: "p-compare", group: "Go to", title: "Compare", hint: "Charts: outcome, flame-out size, burning rate vs oxygen", href: "/compare" },
+  { key: "p-habitat", group: "Go to", title: "Habitat conditions", hint: "Tests nearest to Moon-base air: 30% O₂ or more at about 0.7 atm", href: "/habitat" },
+  { key: "p-investigations", group: "Go to", title: "Investigations ranked", hint: "All 24 PSI combustion investigations ranked for habitat fire safety", href: "/investigations" },
   { key: "p-assistant", group: "Go to", title: "Research Assistant", hint: "Ask a question, get cited NASA evidence", href: "/assistant" },
   { key: "p-sources", group: "Go to", title: "Sources and data notes", hint: "DOIs, files, units, cleaning decisions", href: "/sources" },
 ];
