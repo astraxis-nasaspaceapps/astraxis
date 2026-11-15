@@ -35,7 +35,7 @@ export default function SourcesPage() {
 
         <Card className="p-6">
           <h2 className="font-medium text-ink-100">Fields and units</h2>
-          <table className="mt-3 w-full text-sm">
+          <div className="mt-3 overflow-x-auto"><table className="w-full min-w-[520px] text-sm">
             <thead className="text-left text-xs text-ink-400"><tr><th className="py-1.5 pr-4 font-medium">Field</th><th className="pr-4 font-medium">Unit</th><th className="font-medium">Note</th></tr></thead>
             <tbody>
               {Object.entries(fieldDictionary).map(([k, f]) => (
@@ -46,7 +46,7 @@ export default function SourcesPage() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
         </Card>
 
         <Card className="p-6">

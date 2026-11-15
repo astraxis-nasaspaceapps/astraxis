@@ -108,7 +108,7 @@ function AtmosphereMap({ model, fuel, d0, pts, sel, onPick }: { model: FlexModel
           ))}
           {/* untested labels */}
           <text x={sx((X0 + minP) / 2)} y={sy(21)} textAnchor="middle" fontSize={11} fill="#7d8fa6" transform={`rotate(-90 ${sx((X0 + minP) / 2)} ${sy(21)})`}>Below NASA’s tested pressure</text>
-          <text x={sx(12.8)} y={sy(37.2)} textAnchor="middle" fontSize={11} fill="#7d8fa6">Above NASA’s tested oxygen</text>
+          <text x={sx(X1) - 6} y={sy(36.6)} textAnchor="end" fontSize={11} fill="#7d8fa6">Above NASA’s tested oxygen</text>
           {/* habitat target */}
           <rect x={sx(X0)} y={sy(Y1)} width={sx(TARGET.psi) - sx(X0)} height={sy(TARGET.o2) - sy(Y1)} fill="none" stroke="#38bdf8" strokeWidth={2} strokeDasharray="6 5" />
           <text x={sx(X0) + 6} y={sy(Y1) + 16} fontSize={11} fontWeight={600} fill="#7dd3fc">Moon-base target</text>
@@ -122,7 +122,7 @@ function AtmosphereMap({ model, fuel, d0, pts, sel, onPick }: { model: FlexModel
           {PRESETS.filter((p) => p.key !== "near").map((p) => (
             <g key={p.key}>
               <rect x={sx(p.psi) - 6} y={sy(p.o2) - 6} width={12} height={12} transform={`rotate(45 ${sx(p.psi)} ${sy(p.o2)})`} fill="#f8fafc" stroke="#0b1220" strokeWidth={2} />
-              <text x={p.psi > 13 ? sx(p.psi) - 12 : sx(p.psi) + 12} y={sy(p.o2) + 4} textAnchor={p.psi > 13 ? "end" : "start"} fontSize={11} fontWeight={600} fill="#e6ecf5">{p.o2}% · {p.psi} psi</text>
+              <text x={p.psi > 13 ? sx(p.psi) - 12 : p.psi < 9 ? sx(p.psi) - 6 : sx(p.psi) + 12} y={p.psi < 9 ? sy(p.o2) + 22 : sy(p.o2) + 4} textAnchor={p.psi > 13 ? "end" : "start"} fontSize={11} fontWeight={600} fill="#e6ecf5">{p.o2}% · {p.psi} psi</text>
             </g>
           ))}
           {/* selection */}

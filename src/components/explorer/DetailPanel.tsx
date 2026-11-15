@@ -112,7 +112,7 @@ export function DetailPanel({ test, investigation, fields, log, onClose }: {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 24 }}
       transition={{ type: "spring", stiffness: 320, damping: 32 }}
-      className="scroll-thin flex w-[440px] shrink-0 flex-col overflow-y-auto border-l border-ink-800 bg-ink-900"
+      className="scroll-thin fixed inset-0 z-50 flex w-full flex-col overflow-y-auto bg-ink-900 md:static md:inset-auto md:z-auto md:w-[440px] md:shrink-0 md:border-l md:border-ink-800"
     >
       <div className="flex items-start justify-between px-5 pt-5 pb-4">
         <div>
