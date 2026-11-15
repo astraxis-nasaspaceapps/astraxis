@@ -1,5 +1,5 @@
 import { activeProvider, complete } from "@/lib/llm";
-import { catalogEvidence, catalog } from "@/lib/catalog";
+import { catalogEvidence, catalog, rankedInvestigations, CRITERIA } from "@/lib/catalog";
 import { evidenceStats, investigationContext, parseQuestion, search, stratify } from "@/lib/retrieval";
 
 const SYSTEM = `You are the Astraxis research assistant. You explain NASA microgravity combustion evidence to researchers and engineers.
@@ -16,7 +16,7 @@ Rules, all mandatory:
 5. If the evidence cannot answer the question, say so plainly and say what data would be needed.
 6. The FLEX burning-rate unit is unverified: never attach a unit to burning-rate values. Band medians of burning rate are over ALL tests in the band, not only tests that ended in extinction.
 7. BASS-II records contain test conditions only, not outcomes or flame spread rates: never claim BASS-II outcomes.
-8. If a PSI CATALOG RANKING is in the evidence and the question asks which investigations matter or are most relevant, answer from that ranking: name the top-ranked investigations in rank order and copy each one's rank and score EXACTLY as written there (never round, merge or restate scores from memory). Say that catalog-only investigations are ranked from NASA's catalog descriptions, not their test data, and that only PSI-69 and PSI-25 have full test data in Astraxis. Cite investigations as [PSI-20]. Only ever cite IDs of the form PSI-<number> or PSI-<number>:<record>; never cite section names.
+8. If a PSI CATALOG RANKING is in the evidence, never state any rank, score or ordering yourself: when the question asks which investigations matter most, the server inserts the exact ranked list at the top of your answer. You may discuss the investigations named in that ranking, citing them as [PSI-20]. Make clear that catalog-only investigations are judged from NASA's catalog descriptions, not their test data, and that only PSI-69 and PSI-25 have full test data in Astraxis. Only ever cite IDs of the form PSI-<number> or PSI-<number>:<record>; never cite section names.
 9. Plain text only. You may use "- " bullets and **bold**. Under 260 words.`;
 
 export async function POST(req: Request) {
@@ -42,6 +42,7 @@ export async function POST(req: Request) {
   const provider = activeProvider();
 
   const askAboutInvestigations = /investigation|experiment|relevan|rank|habitat|spacecraft|moon base|rover|which (study|studies)|most useful|equipment|saffire|bass\b|same\b|acme/i.test(q);
+  const askForRanking = askAboutInvestigations && /\b(most|rank\w*|relevan\w*|important|best|priorit\w*|top|matter\w*|useful)\b|which (psi )?(investigation|experiment|stud)/i.test(q) && /investigation|experiment|stud(y|ies)|dataset|data set/i.test(q);
   if (provider && ranked.length) {
     const evidence = [
       `QUESTION: ${q}`,
@@ -74,6 +75,19 @@ export async function POST(req: Request) {
         ids.filter((x) => !allowed.has(x)).forEach((x) => removed.push(x));
         return ok.length ? `[${ok.join(", ")}]` : "[unverified]";
       });
+      // Never cite section names like [PSI CATALOG RANKING].
+      answer = answer.replace(/\s*\[(?!PSI-\d)[A-Z][A-Z ]+\]/g, "");
+      if (askForRanking) {
+        const top5 = rankedInvestigations().slice(0, 5);
+        const lines = top5.map((r) => {
+          const met = CRITERIA.filter((c) => r.criteria[c.key].v === true).map((c) => c.short).join(", ");
+          return `- Rank ${r.rank}, ${r.score} of 5 criteria: **${r.acronym || r.title}** [${r.id}], ${r.inAstraxis ? "full test data in Astraxis" : "catalog description only"}. Meets: ${met}.`;
+        });
+        const block = [`- Astraxis ranks all ${catalog.investigations.length} PSI combustion investigations on 5 habitat fire-safety criteria, using NASA's catalog descriptions. The top five:`, ...lines].join("\n");
+        answer = /What the NASA data shows/i.test(answer)
+          ? answer.replace(/(What the NASA data shows[^\n]*\n)/i, `$1${block}\n`)
+          : `What the NASA data shows\n${block}\n\n${answer}`;
+      }
       if (removed.length) warnings.push(`${removed.length} citation(s) pointed to records the assistant was not shown (${[...new Set(removed)].join(", ")}). They were removed and the claims marked “unverified”.`);
     } catch (e) {
       warnings.push(`The AI explanation is unavailable right now (${(e as Error).message.slice(0, 120)}). The evidence below is unaffected.`);
