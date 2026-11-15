@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #070b14;
+  --color-ink-900: #0b1220;
+  --color-ink-850: #0f1829;
+  --color-ink-800: #131e33;
+  --color-ink-700: #1c2a44;
+  --color-ink-600: #2a3b5c;
+  --color-ink-400: #6b7d9c;
+  --color-ink-300: #93a3bf;
+  --color-ink-200: #c3cee0;
+  --color-ink-100: #e6ecf5;
+  --color-accent: #38bdf8;
+  --color-accent-dim: #0c4a6e;
+  --color-warn: #f59e0b;
+  --color-warn-dim: #3a2a0b;
+  --font-sans: "Public Sans Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+html,
+body {
+  background: var(--color-ink-950);
+  color: var(--color-ink-100);
+}
+
+::selection {
+  background: var(--color-accent-dim);
+}
+
+/* thin scrollbars in panels */
+.scroll-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: var(--color-ink-700); border-radius: 4px; }
+.scroll-thin::-webkit-scrollbar-track { background: transparent; }
+
+/* Public Sans: the U.S. Web Design System typeface used across federal sites */
+body { font-feature-settings: "ss01" off; }
+
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
